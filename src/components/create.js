@@ -1,24 +1,42 @@
 import React, { useState } from "react";
 import { Button, Checkbox, Form } from "semantic-ui-react";
+import axios from "axios";
 
 const Create = () => {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [checkbox, setCheckbox] = useState(false);
+
+  const postData = () => {
+    axios.post(`https://614a996207549f001755a967.mockapi.io/fakeData`, {
+      firstName,
+      lastName,
+      checkbox,
+    });
+  };
+
   return (
     <Form className="create-form">
       <Form.Field>
         <label>Name:</label>
-        <input placeholder="Name" />
+        <input
+          placeholder="Name"
+          onChange={(e) => setFirstName(e.target.value)}
+        />
       </Form.Field>
       <Form.Field>
         <label>Email:</label>
-        <input placeholder="Email" />
+        <input
+          placeholder="Email"
+          onChange={(e) => setLastName(e.target.value)}
+        />
       </Form.Field>
       <Form.Field>
-        <Checkbox label="Subscribe" />
+        <Checkbox label="Subscribe" onChange={(e) => setCheckbox(!checkbox)} />
       </Form.Field>
-      <Button type="submit">Submit</Button>
+      <Button onClick={postData} type="submit">
+        Submit
+      </Button>
     </Form>
   );
 };
