@@ -1,19 +1,20 @@
-@import url('https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap");
 
-.main{
+.main {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background-color: #212121;
+  background-color: #313131;
   color: whitesmoke;
   flex-direction: column;
 }
-.main-header{
-  font-family: 'Fjalla One', sans-serif;
+.main-header {
+  font-family: "Fjalla One", sans-serif;
+  color: rgb(186, 165, 205);
 }
-.create-form label{
+.create-form label {
   color: rgb(235, 229, 220) !important;
-  font-family: 'Fjalla One', sans-serif;
+  font-family: "Fjalla One", sans-serif;
   font-size: 12px !important;
 }

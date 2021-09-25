@@ -3,12 +3,15 @@ import "./App.css";
 import Create from "./components/create";
 import Read from "./components/read";
 import Update from "./components/update";
+import { Link } from "react-router-dom";
 
 function App() {
   return (
     <Router>
       <div className="main">
-        <h2 className="main-header">Form Test</h2>
+        <Link to="/create">
+          <h2 className="main-header">SIGN UP</h2>
+        </Link>
         <div>
           <Route exact path="/create" component={Create} />
           <Route exact path="/read" component={Read} />

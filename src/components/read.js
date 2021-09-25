@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import { Table, Button } from "semantic-ui-react";
 
 export default function Read() {
+
   const [APIData, setAPIData] = useState([]);
 
   useEffect(() => {

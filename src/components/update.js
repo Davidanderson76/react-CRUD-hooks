@@ -1,10 +1,12 @@
 import axios from "axios";
 import React, { useState, useEffect } from "react";
+import { useHistory } from "react-router";
 
 import { Button, Checkbox, Form } from "semantic-ui-react";
 // import axios from "axios";
 
 const Update = () => {
+  let history = useHistory();
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [checkbox, setCheckbox] = useState(false);
@@ -19,11 +21,15 @@ const Update = () => {
   }, []);
 
   const updateAPIData = () => {
-    axios.put(`https://614a996207549f001755a967.mockapi.io/fakeData/${id}`, {
-      firstName,
-      lastName,
-      checkbox,
-    });
+    axios
+      .put(`https://614a996207549f001755a967.mockapi.io/fakeData/${id}`, {
+        firstName,
+        lastName,
+        checkbox,
+      })
+      .then(() => {
+        history.push("/read");
+      });
   };
 
   return (
