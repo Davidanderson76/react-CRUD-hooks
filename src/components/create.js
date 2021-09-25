@@ -8,15 +8,15 @@ const Create = () => {
   return (
     <Form className="create-form">
       <Form.Field>
-        <label>First Name</label>
-        <input placeholder="First Name" />
+        <label>Name:</label>
+        <input placeholder="Name" />
       </Form.Field>
       <Form.Field>
-        <label>Last Name</label>
-        <input placeholder="Last Name" />
+        <label>Email:</label>
+        <input placeholder="Email" />
       </Form.Field>
       <Form.Field>
-        <Checkbox label="I agree to the Terms and Conditions" />
+        <Checkbox label="Subscribe" />
       </Form.Field>
       <Button type="submit">Submit</Button>
     </Form>
